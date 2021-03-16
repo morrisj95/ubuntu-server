@@ -12,4 +12,5 @@ DO NOT install docker via snap. This script assumes you installed nothing yet.  
 snap remove docker
 rm -R /var/lib/docker
 sudo apt-get remove docker docker-engine docker.io
+hash -r  # resets the $PATH cache
 ```

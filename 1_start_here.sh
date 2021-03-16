@@ -11,7 +11,7 @@ terraform -install-autocomplete
 
 
 # misc
-echo "export GPG_TTY=$(tty)" >> ~/.bashrc
+echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc
 source ~/.bashrc
 sudo apt install python3-virtualenv
 sudo apt install openjdk-8-jre

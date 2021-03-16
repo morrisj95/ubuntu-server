@@ -2,7 +2,7 @@ sudo apt-get update && sudo apt-get upgrade
 
 ssh-keygen -t ed25519
 cat ~/.ssh/id_ed25519.pub 
-echo "remember to add that to github"
+echo "remember to add that to github and gitlab"
 
 
 touch ~/.ssh/config

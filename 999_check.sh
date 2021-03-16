@@ -7,6 +7,8 @@ echo "alias bashconfig='vim ~/.bashrc'" >> ~/.bashrc
 
 source ~/.bashrc
 
+# run these one-by-one, don't copy/paste the whole section
+
 java -version
 aws-cli --version
 python3 --version

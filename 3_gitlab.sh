@@ -10,6 +10,8 @@ export GITLAB_HOME=/srv/gitlab
 sudo mkdir -p $GITLAB_HOME/data
 sudo mkdir -p $GITLAB_HOME/logs
 sudo mkdir -p $GITLAB_HOME/config
+sudo chown -R :docker $GITLAB_HOME
+sudo chmod -R 775 $GITLAB_HOME
 
 mkdir -p ~/.gitlab
 cd ~/.gitlab/
@@ -20,13 +22,11 @@ web:
   restart: always
   hostname: 'gitlab.localhost'
   environment:
-    GITLAB_OMNIBUS_CONFIG: |
-      external_url 'https://gitlab.example.com'
-      # Add any other gitlab.rb configuration here, each on its own line
+      - "GITLAB_OMNIBUS_CONFIG=external_url 'http://192.168.1.170:8001/'"
   ports:
-    - '80:80'
-    - '443:443'
-    - '22:22'
+    - "8003:22"
+    - "8001:8000"
+    - "8002:443"
   volumes:
     - '$GITLAB_HOME/config:/etc/gitlab'
     - '$GITLAB_HOME/logs:/var/log/gitlab'

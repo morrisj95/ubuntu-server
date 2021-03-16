@@ -1,6 +1,9 @@
 # prerequisite: docker-compose
-
 # sets up and install gitlab self-hosted as a docker container via docker-compose
+
+
+# let's move nextcloud from 80/443 to 81/444..
+sudo snap set nextcloud ports.http=81 ports.https=444
 
 # gitlab
 export GITLAB_HOME=/srv/gitlab

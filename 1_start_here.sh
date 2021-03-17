@@ -10,16 +10,17 @@ rm -rf terraform/
 terraform -install-autocomplete
 
 
+# you know the drill. Gonna be a while here...
+sudo apt-get update && sudo apt-get upgrade
+
+
 # misc
 echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc
 source ~/.bashrc
 sudo apt install python3-virtualenv
 sudo apt install openjdk-8-jre
 sudo apt install node-express-generator
-
-
-# you know the drill. Gonna be a while here...
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install kubernetes
 
 
 # npm

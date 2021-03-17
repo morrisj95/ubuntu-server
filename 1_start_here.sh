@@ -19,7 +19,8 @@ echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc
 source ~/.bashrc
 sudo apt install python3-virtualenv
 sudo apt install openjdk-8-jre
-sudo apt install node-express-generator
+sudo npm install -g firebase-tools
+sudo apt 
 
 # kubernetes
 sudo apt-get install kubernetes
@@ -31,9 +32,21 @@ echo "$(<kubectl.sha256) kubectl" | sha256sum --check
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client
 
-
 # npm
 sudo apt-get install npm
+
+# Google Cloud SDK
+mkdir -p ~/tmp/gcsdk
+cd ~/tmp/gcsdk
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-332.0.0-linux-x86_64.tar.gz
+tar -xvzf google-cloud-sdk-332.0.0-linux-x86_64.tar.gz
+./google-cloud-sdk/install.sh
+./google-cloud-sdk/bin/gcloud init
+source ~/.bashrc
+cd ~
+rm -rf ~/tmp/gcsdk
+gcloud --version
+
 
 # docker
 sudo apt-get install \

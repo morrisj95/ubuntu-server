@@ -13,6 +13,9 @@ terraform -install-autocomplete
 # you know the drill. Gonna be a while here...
 sudo apt-get update && sudo apt-get upgrade
 
+# nodeJS 14 LTS
+sudo apt-get purge --auto-remove nodejs # remove Node10 LTS pre-installed
+sudo snap install node --classic # node 14.16.0 as of 3/18/21
 
 # misc
 echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc

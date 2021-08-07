@@ -9,24 +9,39 @@ cd ~
 rm -rf terraform/
 terraform -install-autocomplete
 
+# you know the drill. Gonna be a while here...
+sudo apt-get update && sudo apt-get upgrade
+
+# nodeJS 16.x
+sudo apt-get purge --auto-remove nodejs # remove Node10 LTS pre-installed
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
+
+# npm
+sudo apt-get install -y npm
 
 # you know the drill. Gonna be a while here...
 sudo apt-get update && sudo apt-get upgrade
 
-# nodeJS 14 LTS
-sudo apt-get purge --auto-remove nodejs # remove Node10 LTS pre-installed
-sudo snap install node --classic # node 14.16.0 as of 3/18/21
+# networking tools
+sudo apt-get install -y net-tools
+sudo apt-get install -y curl
+sudo apt-get install -y wget
+sudo apt-get install -y nmap
+sudo npm install -g kill-port
+
+# aliases
+fg() { export GPG_TTY=$1; }
 
 # misc
 echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc
 source ~/.bashrc
-sudo apt install python3-virtualenv
-sudo apt install openjdk-8-jre
+sudo apt install -y python3-virtualenv
+sudo apt install -y openjdk-8-jre
 sudo npm install -g firebase-tools
-sudo apt 
 
 # kubernetes
-sudo apt-get install kubernetes
+sudo apt-get install -y kubernetes
 mkdir -p ~/tmp/kube
 cd ~/tmp/kube
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -35,8 +50,6 @@ echo "$(<kubectl.sha256) kubectl" | sha256sum --check
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client
 
-# npm
-sudo apt-get install npm
 
 # Google Cloud SDK
 mkdir -p ~/tmp/gcsdk
@@ -52,10 +65,9 @@ gcloud --version
 
 
 # docker
-sudo apt-get install \
+sudo apt-get install -y \
   apt-transport-https \
   ca-certificates \
-  curl \
   gnupg \
   lsb-release
 

@@ -30,8 +30,8 @@ sudo apt-get install -y wget
 sudo apt-get install -y nmap
 sudo npm install -g kill-port
 
-# aliases
-fg() { export GPG_TTY=$1; }
+# misc dev tools
+sudo apt-get install -y automake autoconf libtool pkg-config make g++ zlib1g-dev
 
 # misc
 echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc

@@ -84,3 +84,6 @@ sudo groupadd docker
 sudo gpasswd -a $USER docker
 newgrp docker
 sudo reboot
+
+# time tracking
+pip3 install td-watson  

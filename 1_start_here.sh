@@ -31,7 +31,7 @@ sudo apt-get install -y nmap
 sudo npm install -g kill-port
 
 # misc dev tools
-sudo apt-get install -y automake autoconf libtool pkg-config make g++ zlib1g-dev
+sudo apt-get install -y autoconf automake g++ libtool make pkg-config tree unzip zlib1g-dev
 
 # misc
 echo "alias gpg-fix='export GPG_TTY=$(tty)'" >> ~/.bashrc
